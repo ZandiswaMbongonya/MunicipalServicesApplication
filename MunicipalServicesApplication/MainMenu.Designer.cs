@@ -33,6 +33,7 @@
             // 
             // btnLocalEvents
             // 
+            this.btnLocalEvents.Enabled = false;
             this.btnLocalEvents.Location = new System.Drawing.Point(300, 180);
             this.btnLocalEvents.Name = "btnLocalEvents";
             this.btnLocalEvents.Size = new System.Drawing.Size(279, 50);
@@ -43,6 +44,7 @@
             // 
             // btnServiceStatus
             // 
+            this.btnServiceStatus.Enabled = false;
             this.btnServiceStatus.Location = new System.Drawing.Point(300, 260);
             this.btnServiceStatus.Name = "btnServiceStatus";
             this.btnServiceStatus.Size = new System.Drawing.Size(241, 50);
