@@ -119,12 +119,30 @@ namespace MunicipalServicesApplication
             UpdateEngagement();
         }
 
+
         private void btnBack_Click(object sender, EventArgs e)
         {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
             this.Close();
         }
 
         private void lblEngagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
