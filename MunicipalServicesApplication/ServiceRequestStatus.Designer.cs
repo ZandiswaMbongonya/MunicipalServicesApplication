@@ -119,7 +119,7 @@
             this.lblStatusResult.ForeColor = System.Drawing.Color.Navy;
             this.lblStatusResult.Location = new System.Drawing.Point(34, 267);
             this.lblStatusResult.Name = "lblStatusResult";
-            this.lblStatusResult.Size = new System.Drawing.Size(500, 50);
+            this.lblStatusResult.Size = new System.Drawing.Size(500, 100);
             this.lblStatusResult.TabIndex = 7;
             this.lblStatusResult.Text = "Enter a request ID and click Check Status.";
             this.lblStatusResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

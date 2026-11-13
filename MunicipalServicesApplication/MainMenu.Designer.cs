@@ -20,6 +20,7 @@
             this.btnLocalEvents = new System.Windows.Forms.Button();
             this.btnServiceStatus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnServiceGraph = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnReportIssues
@@ -77,12 +78,27 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnServiceGraph
+            // 
+            this.btnServiceGraph.BackColor = System.Drawing.Color.Olive;
+            this.btnServiceGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServiceGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiceGraph.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnServiceGraph.Location = new System.Drawing.Point(197, 343);
+            this.btnServiceGraph.Name = "btnServiceGraph";
+            this.btnServiceGraph.Size = new System.Drawing.Size(453, 40);
+            this.btnServiceGraph.TabIndex = 4;
+            this.btnServiceGraph.Text = "Service Location Graph";
+            this.btnServiceGraph.UseVisualStyleBackColor = false;
+            this.btnServiceGraph.Click += new System.EventHandler(this.btnServiceGraph_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnServiceGraph);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnServiceStatus);
             this.Controls.Add(this.btnLocalEvents);
@@ -101,5 +117,6 @@
         private System.Windows.Forms.Button btnLocalEvents;
         private System.Windows.Forms.Button btnServiceStatus;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnServiceGraph;
     }
 }

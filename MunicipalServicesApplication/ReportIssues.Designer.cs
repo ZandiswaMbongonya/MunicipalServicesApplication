@@ -43,6 +43,7 @@
             this.lblEngagement = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +95,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(12, 165);
+            this.lblDescription.Location = new System.Drawing.Point(12, 245);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(93, 20);
             this.lblDescription.TabIndex = 4;
@@ -104,7 +105,7 @@
             // rtbDescription
             // 
             this.rtbDescription.BackColor = System.Drawing.Color.White;
-            this.rtbDescription.Location = new System.Drawing.Point(12, 195);
+            this.rtbDescription.Location = new System.Drawing.Point(12, 268);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(893, 95);
             this.rtbDescription.TabIndex = 5;
@@ -114,7 +115,7 @@
             // lblAttachment
             // 
             this.lblAttachment.AutoSize = true;
-            this.lblAttachment.Location = new System.Drawing.Point(12, 310);
+            this.lblAttachment.Location = new System.Drawing.Point(12, 392);
             this.lblAttachment.Name = "lblAttachment";
             this.lblAttachment.Size = new System.Drawing.Size(138, 20);
             this.lblAttachment.TabIndex = 6;
@@ -126,7 +127,7 @@
             this.btnAttachMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttachMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttachMedia.ForeColor = System.Drawing.Color.Navy;
-            this.btnAttachMedia.Location = new System.Drawing.Point(12, 345);
+            this.btnAttachMedia.Location = new System.Drawing.Point(12, 426);
             this.btnAttachMedia.Name = "btnAttachMedia";
             this.btnAttachMedia.Size = new System.Drawing.Size(125, 45);
             this.btnAttachMedia.TabIndex = 7;
@@ -144,7 +145,7 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(145, 345);
+            this.btnSubmit.Location = new System.Drawing.Point(157, 426);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(145, 45);
             this.btnSubmit.TabIndex = 8;
@@ -158,7 +159,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(300, 345);
+            this.btnBack.Location = new System.Drawing.Point(308, 426);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(205, 45);
             this.btnBack.TabIndex = 9;
@@ -168,7 +169,7 @@
             // 
             // progressBarEngagement
             // 
-            this.progressBarEngagement.Location = new System.Drawing.Point(33, 473);
+            this.progressBarEngagement.Location = new System.Drawing.Point(33, 529);
             this.progressBarEngagement.Name = "progressBarEngagement";
             this.progressBarEngagement.Size = new System.Drawing.Size(280, 23);
             this.progressBarEngagement.TabIndex = 10;
@@ -176,7 +177,7 @@
             // lblEngagement
             // 
             this.lblEngagement.AutoSize = true;
-            this.lblEngagement.Location = new System.Drawing.Point(28, 450);
+            this.lblEngagement.Location = new System.Drawing.Point(29, 490);
             this.lblEngagement.Name = "lblEngagement";
             this.lblEngagement.Size = new System.Drawing.Size(284, 20);
             this.lblEngagement.TabIndex = 11;
@@ -205,12 +206,27 @@
             this.label1.Text = "Report an Issue";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // cmbPriority
+            // 
+            this.cmbPriority.FormattingEnabled = true;
+            this.cmbPriority.Items.AddRange(new object[] {
+            "High",
+            "",
+            "Medium",
+            "",
+            "Low"});
+            this.cmbPriority.Location = new System.Drawing.Point(16, 171);
+            this.cmbPriority.Name = "cmbPriority";
+            this.cmbPriority.Size = new System.Drawing.Size(436, 28);
+            this.cmbPriority.TabIndex = 13;
+            // 
             // ReportIssues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(969, 564);
+            this.Controls.Add(this.cmbPriority);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEngagement);
             this.Controls.Add(this.progressBarEngagement);
@@ -227,6 +243,7 @@
             this.Name = "ReportIssues";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report an Issue";
+            this.Load += new System.EventHandler(this.ReportIssues_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -251,5 +268,6 @@
         private System.Windows.Forms.Label lblEngagement;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbPriority;
     }
 }

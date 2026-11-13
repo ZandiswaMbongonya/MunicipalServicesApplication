@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Windows.Forms;
 
 namespace MunicipalServicesApplication
@@ -11,7 +11,6 @@ namespace MunicipalServicesApplication
             InitializeComponent();
         }
 
-
         private void btnCheckStatus_Click(object sender, EventArgs e)
         {
             string requestID = txtRequestID.Text.Trim();
@@ -22,19 +21,15 @@ namespace MunicipalServicesApplication
                 return;
             }
 
-            // Temporary sample request records for testing.
-            Dictionary<string, string> requestStatuses =
-                new Dictionary<string, string>(
-                    StringComparer.OrdinalIgnoreCase)
-                {
-            { "SR001", "Submitted - Your request has been received." },
-            { "SR002", "In Progress - Your request is being attended to." },
-            { "SR003", "Resolved - Your request has been completed." }
-                };
+            Issue request = ServiceRequestRepository.GetRequestByID(requestID);
 
-            if (requestStatuses.TryGetValue(requestID, out string status))
+            if (request != null)
             {
-                lblStatusResult.Text = status;
+                lblStatusResult.Text =
+                    "Request ID: " + request.RequestID +
+                    "\nStatus: " + request.Status +
+                    "\nCategory: " + request.Category +
+                    "\nLocation: " + request.Location;
             }
             else
             {
@@ -50,12 +45,10 @@ namespace MunicipalServicesApplication
 
         private void pnlHeader_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

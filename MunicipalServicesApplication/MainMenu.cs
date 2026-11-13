@@ -34,5 +34,11 @@ namespace MunicipalServicesApplication
         {
 
         }
+
+        private void btnServiceGraph_Click(object sender, EventArgs e)
+        {
+            ServiceRequestGraphForm graphForm = new ServiceRequestGraphForm();
+            graphForm.Show();
+        }
     }
 }

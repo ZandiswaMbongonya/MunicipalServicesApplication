@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Windows.Forms;
 
 namespace MunicipalServicesApplication
 {
     public partial class ReportIssues : Form
     {
-        private List<Issue> reportedIssues = new List<Issue>();
         private string attachedFilePath = "";
 
         public ReportIssues()
@@ -19,7 +18,7 @@ namespace MunicipalServicesApplication
 
             UpdateEngagement();
         }
-       
+
         private void UpdateEngagement()
         {
             int completedFields = 0;
@@ -87,8 +86,9 @@ namespace MunicipalServicesApplication
         private void btnSubmitIssue_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtLocation.Text) ||
-                cmbCategory.SelectedIndex == -1 ||
-                string.IsNullOrWhiteSpace(rtbDescription.Text))
+    cmbCategory.SelectedIndex == -1 ||
+    cmbPriority.SelectedIndex == -1 ||
+    string.IsNullOrWhiteSpace(rtbDescription.Text))
             {
                 MessageBox.Show(
                     "Please complete all required fields before submitting.",
@@ -101,14 +101,15 @@ namespace MunicipalServicesApplication
             {
                 Location = txtLocation.Text,
                 Category = cmbCategory.SelectedItem.ToString(),
+                Priority = cmbPriority.SelectedItem.ToString(),
                 Description = rtbDescription.Text,
                 AttachedFile = attachedFilePath
             };
 
-            reportedIssues.Add(newIssue);
+            string requestID = ServiceRequestRepository.AddRequest(newIssue);
 
             MessageBox.Show(
-                "Your issue has been submitted successfully!",
+                "Your issue has been submitted successfully!\n\nYour Request ID is: " + requestID,
                 "Success");
 
             txtLocation.Clear();
@@ -119,7 +120,6 @@ namespace MunicipalServicesApplication
             UpdateEngagement();
         }
 
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             MainMenu mainMenu = new MainMenu();
@@ -129,20 +129,21 @@ namespace MunicipalServicesApplication
 
         private void lblEngagement_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblDescription_Click(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ReportIssues_Load(object sender, EventArgs e)
         {
 
         }
